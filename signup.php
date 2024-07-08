@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(isset($_SESSION["user_id"])){
+if (isset($_SESSION["user_id"])) {
     header("Location: index.php");
 }
 
@@ -37,9 +37,37 @@ if(isset($_SESSION["user_id"])){
 
     <div class="wrapper">
         <?php
-        include_once "includes/header.php"
+        include_once "includes/header.php";
 
-            ?>
+        if (isset($_SESSION["input"])) {
+            $fname = $_SESSION["input"]["fname"];
+            $lname = $_SESSION["input"]["lname"];
+            $email = $_SESSION["input"]["email"];
+            $phone = $_SESSION["input"]["phone"];
+            $password = $_SESSION["input"]["password"];
+            $cpassword = $_SESSION["input"]["cpassword"];
+            $company_name = $_SESSION["input"]["company_name"];
+            $country = $_SESSION["input"]["country"];
+            $city = $_SESSION["input"]["city"];
+            $address = $_SESSION["input"]["address"];
+            $postcode = $_SESSION["input"]["postcode"];
+            $company_phone = $_SESSION["input"]["company_phone"];
+        } else {
+            $fname = "";
+            $lname = "";
+            $email = "";
+            $phone = "";
+            $password = "";
+            $cpassword = "";
+            $company_name = "";
+            $country = "";
+            $city = "";
+            $address = "";
+            $postcode = "";
+            $company_phone = "";
+        }
+
+        ?>
 
 
         <!-- REGISTRATION FORM START-->
@@ -60,44 +88,34 @@ if(isset($_SESSION["user_id"])){
 
                                 <div class="form-group mb-3">
                                     <label for="">First Name <span>*</span></label>
-                                    <input type="text" placeholder="First Name" value="<?php if (isset($_POST["fname"])) {
-                                        echo $_POST["fname"];
-                                    } ?>" name="fname" class="form-control">
+                                    <input type="text" placeholder="First Name" value="<?php echo $fname; ?>"
+                                        name="fname" class="form-control">
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="">Last Name <span>*</span></label>
-                                    <input type="text" placeholder="Last Name" value="<?php if (isset($_POST["lname"])) {
-                                        echo $_POST["lname"];
-                                    } ?>" name="lname" class="form-control">
+                                    <input type="text" placeholder="Last Name" value="<?php echo $lname; ?>"
+                                        name="lname" class="form-control">
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="">Email Address <span>*</span></label>
-                                    <input type="email" placeholder="Email Address" value="<?php if (isset($_POST["email"])) {
-                                        echo $_POST["email"];
-                                    } ?>" name="email" class="form-control">
+                                    <input type="email" placeholder="Email Address" value="<?php echo $email; ?>" name="email" class="form-control">
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <label for="">Phone </label>
-                                    <input type="number" placeholder="Phone" value="<?php if (isset($_POST["phone"])) {
-                                        echo $_POST["phone"];
-                                    } ?>" name="phone" class="form-control">
+                                    <label for="">Phone <span>*</span></label>
+                                    <input type="number" placeholder="Phone" value="<?php echo $phone; ?>" name="phone" class="form-control">
                                 </div>
 
 
                                 <div class="form-group mb-3">
                                     <label for="">Password <span>*</span> </label>
-                                    <input type="password" placeholder="Password" value="<?php if (isset($_POST["password"])) {
-                                        echo $_POST["password"];
-                                    } ?>" name="password" class="form-control">
+                                    <input type="password" placeholder="Password" value="<?php echo $password; ?>" name="password" class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Confirm Password <span>*</span> </label>
-                                    <input type="password" placeholder="Confirm Password" value="<?php if (isset($_POST["password"])) {
-                                        echo $_POST["password"];
-                                    } ?>" name="cpassword" class="form-control">
+                                    <input type="password" placeholder="Confirm Password" value="<?php echo $cpassword; ?>" name="cpassword" class="form-control">
                                 </div>
 
                             </div>
@@ -107,44 +125,34 @@ if(isset($_SESSION["user_id"])){
 
                                 <div class="form-group mb-3">
                                     <label for="">Company</label>
-                                    <input type="text" placeholder="Company" value="<?php if (isset($_POST["company_name"])) {
-                                        echo $_POST["company_name"];
-                                    } ?>" name="company_name" class="form-control">
+                                    <input type="text" placeholder="Company" value="<?php echo $company_name; ?>" name="company_name" class="form-control">
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="">Country</label>
-                                    <select name="country" class="form-select" id="">
+                                    <select value="<?php echo $country; ?>" name="country" class="form-select" id="">
                                         <option value="uk">United Kingdom</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="">City</label>
-                                    <input type="text" placeholder="City" value="<?php if (isset($_POST["city"])) {
-                                        echo $_POST["city"];
-                                    } ?>" name="city" class="form-control">
+                                    <input type="text" placeholder="City" value="<?php echo $city; ?>" name="city" class="form-control">
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="">Address </label>
-                                    <input type="text" placeholder="Address" value="<?php if (isset($_POST["address"])) {
-                                        echo $_POST["address"];
-                                    } ?>" name="address" class="form-control">
+                                    <input type="text" placeholder="Address" value="<?php echo $address; ?>" name="address" class="form-control">
                                 </div>
 
 
                                 <div class="form-group mb-3">
                                     <label for="">Postcode</label>
-                                    <input type="text" placeholder="Postcode" value="<?php if (isset($_POST["postcode"])) {
-                                        echo $_POST["postcode"];
-                                    } ?>" name="postcode" class="form-control">
+                                    <input type="text" placeholder="Postcode" value="<?php echo $postcode; ?>" name="postcode" class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Company Phone</label>
-                                    <input type="number" placeholder="Phone" value="<?php if (isset($_POST["company_name"])) {
-                                        echo $_POST["company_name"];
-                                    } ?>" name="company_phone" class="form-control">
+                                    <input type="number" placeholder="Phone" value="<?php echo $company_phone; ?>" name="company_phone" class="form-control">
                                 </div>
 
                             </div>
@@ -175,9 +183,8 @@ if(isset($_SESSION["user_id"])){
 
         <?php
         include_once "includes/footer.php";
-        if (isset($_SESSION["msg"])) {
-            unset($_SESSION['msg']);
-        }
+        unset($_SESSION['msg']);
+        unset($_SESSION["input"]);
         ?>
 
 

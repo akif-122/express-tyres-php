@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,9 @@
 <body>
 
     <div class="wrapper">
-        <?php include_once "includes/header.php";
+        <?php
+
+        include_once "includes/header.php";
         ?>
 
 
@@ -40,20 +42,34 @@
                     echo $_SESSION["msg"];
                 } ?>
                 </p>
-                <p class="text-success col-lg-5 mx-auto col-md-6"><?php if (isset($_SESSION["msg-send"])) {
-                    echo $_SESSION["msg-send"];
+                <p class="text-success col-lg-5 mx-auto col-md-6"><?php if (isset($_SESSION["update"])) {
+                    echo $_SESSION["update"];
                 } ?>
                 </p>
-                <form action="php/forget-password.php" method="POST">
+                <form action="php/reset-password.php" method="POST">
                     <div class="col-lg-5 col-md-6 mx-auto sign-up-wrap px-2 px-sm-3">
-                        <h5 class="text-center mb-4">FORGOT PASSWORD</h5>
+                        <h5 class="text-center mb-4">RESET PASSWORD</h5>
                         <div class="row">
 
                             <div class="col-12  mb-4 mb-lg-0">
+                                <input type="hidden" value="<?php if (isset($_GET["token"])) {
+                                    echo $_GET["token"];
+                                } ?>"
+                                    name="token">
+                                <input type="hidden" value="<?php if (isset($_GET["email"])) {
+                                    echo $_GET["email"];
+                                } ?>"
+                                    name="email">
+                                <div class="form-group mb-3">
+                                    <label for="">Password <span>*</span></label>
+                                    <input type="password" name="password" placeholder="Enter New Password"
+                                        class="form-control">
+                                </div>
 
                                 <div class="form-group mb-3">
-                                    <label for="">Email Address <span>*</span></label>
-                                    <input type="email" name="email" placeholder="Email Address" class="form-control">
+                                    <label for="">Confirm Password <span>*</span></label>
+                                    <input type="password" name="cpassword" placeholder="Enter Confirm Password"
+                                        class="form-control">
                                 </div>
 
 
@@ -81,6 +97,7 @@
         <?php
         include_once "includes/footer.php";
         unset($_SESSION["msg"]);
+        unset($_SESSION["update"]);
         ?>
 
 

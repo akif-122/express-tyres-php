@@ -5,6 +5,10 @@ include_once "./config.php";
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
     $password = mysqli_real_escape_string($conn, $_POST["password"]);
+    $remember_me = $_POST["remember_me"];
+
+    $_SESSION["input"] = $_POST;
+
 
     // CHECK REQUIRED FIELDS
     if ($email == "" || $password == "") {
@@ -29,6 +33,20 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
                 $_SESSION["user_id"] = $user["id"];
                 $_SESSION["email"] = $user["email"];
                 $_SESSION["admin"] = $user["admin"];
+
+                if ($remember_me) {
+                    setcookie("email", $email, time() + (7 * 24 * 60 * 60), "/");
+                    setcookie("password", $password, time() + (7 * 24 * 60 * 60), "/");
+
+
+                } else {
+                    setcookie("email", "", 1, "/");
+                    setcookie("password", "", 1, "/");
+                    echo "Hello Cokie";
+
+                }
+
+
                 header("Location: ../index.php");
                 die();
 

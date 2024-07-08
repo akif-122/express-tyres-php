@@ -16,6 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $postcode = mysqli_real_escape_string($conn, $_POST["postcode"]);
     $company_phone = mysqli_real_escape_string($conn, $_POST["company_phone"]);
 
+    $_SESSION["input"] = $_POST;
+
     if ($fname == "" || $lname == "" || $email == "" || $password == "" || $cpassword == "" || $phone == "") {
         $_SESSION["msg"] = "Please fill all required fields!";
         header("Location: http://localhost/xpress-tyres/signup.php");
