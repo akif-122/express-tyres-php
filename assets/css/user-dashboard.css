@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+================================================
+    USER DASHBOARD 
+================================================
+*/
+.user-dashboard .side-bar{
+    background-color: var(--dark-blue);
+    min-height: 100vh;
+    height: 100%;
+    padding: 20px;
+
+}
+
+.user-dashboard .side-bar h3{
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid #0081c2;
+    color: var(--white);
+    padding-bottom: 15px;
+}
+
+.user-dashboard .side-bar  ul{
+    padding: 0;
+}
+.user-dashboard .side-bar  ul li{
+    list-style: none;
+}
+.user-dashboard .side-bar  ul li a{
+    display: block;
+    color: var(--white);
+    /* background-color: var(--dark-blue); */
+    margin: 5px 0;
+    padding: 7px 10px;
+    border-radius: 3px;
+}
+.user-dashboard .side-bar  ul li a i{
+    margin-right: 10px;
+    transition: .4s ease;
+}
+.user-dashboard .side-bar  ul li a.active,
+.user-dashboard .side-bar  ul li a:hover{
+    background-color: var(--primary-blue);
+}
+
+.user-dashboard .side-bar  ul li a:hover i{
+    margin-right: 20px;
+}
+.user-dashboard .user-main{
+    padding: 40px;
+}
+
+
+.user-dashboard .user-main h5{
+    margin-bottom: 20px;
+}
+
+.user-dashboard .user-main  .user-profile h4{
+    border-bottom: 1px solid var(--light-grey);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.user-dashboard .user-main  .user-profile p{
+    margin: 16px 0;
+}
+.user-dashboard .user-main  .user-profile p strong{
+    font-weight: 600 !important;
+}
+/* 
+================================================
+    USER DASHBOARD END
+================================================
+*/

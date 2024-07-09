@@ -1,9 +1,9 @@
 <?php
 session_start();
-
 if (isset($_SESSION["user_id"])) {
     header("Location: index.php");
 }
+session_abort();
 
 ?>
 <!DOCTYPE html>
@@ -39,6 +39,8 @@ if (isset($_SESSION["user_id"])) {
         <?php
         include_once "includes/header.php";
 
+
+
         if (isset($_SESSION["input"])) {
             $fname = $_SESSION["input"]["fname"];
             $lname = $_SESSION["input"]["lname"];
@@ -66,6 +68,8 @@ if (isset($_SESSION["user_id"])) {
             $postcode = "";
             $company_phone = "";
         }
+
+
 
         ?>
 
@@ -100,22 +104,26 @@ if (isset($_SESSION["user_id"])) {
 
                                 <div class="form-group mb-3">
                                     <label for="">Email Address <span>*</span></label>
-                                    <input type="email" placeholder="Email Address" value="<?php echo $email; ?>" name="email" class="form-control">
+                                    <input type="email" placeholder="Email Address" value="<?php echo $email; ?>"
+                                        name="email" class="form-control">
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="">Phone <span>*</span></label>
-                                    <input type="number" placeholder="Phone" value="<?php echo $phone; ?>" name="phone" class="form-control">
+                                    <input type="number" placeholder="Phone" value="<?php echo $phone; ?>" name="phone"
+                                        class="form-control">
                                 </div>
 
 
                                 <div class="form-group mb-3">
                                     <label for="">Password <span>*</span> </label>
-                                    <input type="password" placeholder="Password" value="<?php echo $password; ?>" name="password" class="form-control">
+                                    <input type="password" placeholder="Password" value="<?php echo $password; ?>"
+                                        name="password" class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Confirm Password <span>*</span> </label>
-                                    <input type="password" placeholder="Confirm Password" value="<?php echo $cpassword; ?>" name="cpassword" class="form-control">
+                                    <input type="password" placeholder="Confirm Password"
+                                        value="<?php echo $cpassword; ?>" name="cpassword" class="form-control">
                                 </div>
 
                             </div>
@@ -125,7 +133,8 @@ if (isset($_SESSION["user_id"])) {
 
                                 <div class="form-group mb-3">
                                     <label for="">Company</label>
-                                    <input type="text" placeholder="Company" value="<?php echo $company_name; ?>" name="company_name" class="form-control">
+                                    <input type="text" placeholder="Company" value="<?php echo $company_name; ?>"
+                                        name="company_name" class="form-control">
                                 </div>
 
                                 <div class="form-group mb-3">
@@ -137,22 +146,26 @@ if (isset($_SESSION["user_id"])) {
 
                                 <div class="form-group mb-3">
                                     <label for="">City</label>
-                                    <input type="text" placeholder="City" value="<?php echo $city; ?>" name="city" class="form-control">
+                                    <input type="text" placeholder="City" value="<?php echo $city; ?>" name="city"
+                                        class="form-control">
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="">Address </label>
-                                    <input type="text" placeholder="Address" value="<?php echo $address; ?>" name="address" class="form-control">
+                                    <input type="text" placeholder="Address" value="<?php echo $address; ?>"
+                                        name="address" class="form-control">
                                 </div>
 
 
                                 <div class="form-group mb-3">
                                     <label for="">Postcode</label>
-                                    <input type="text" placeholder="Postcode" value="<?php echo $postcode; ?>" name="postcode" class="form-control">
+                                    <input type="text" placeholder="Postcode" value="<?php echo $postcode; ?>"
+                                        name="postcode" class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Company Phone</label>
-                                    <input type="number" placeholder="Phone" value="<?php echo $company_phone; ?>" name="company_phone" class="form-control">
+                                    <input type="number" placeholder="Phone" value="<?php echo $company_phone; ?>"
+                                        name="company_phone" class="form-control">
                                 </div>
 
                             </div>

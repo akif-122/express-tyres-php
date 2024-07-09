@@ -1,11 +1,15 @@
 <?php
 session_start();
+
+$current_page = basename($_SERVER['REQUEST_URI'], ".php");
+
+
 ?>
 <div class="wrapper">
     <!-- TOP BAR SECTION START -->
     <section class="top-bar d-flex align-items-center justify-content-between ">
         <ul class="m-0 d-flex align-items-center list-unstyled">
-            <li><a href="#">Home</a></li>
+            <li><a href="#" >Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
@@ -16,7 +20,7 @@ session_start();
                 <?php
                 if (isset($_SESSION["user_id"])) {
                     ?>
-                    <a href="dashboard.php" class="dropdown-item">Dashboard</a>
+                    <a href="user-dashboard.php" class="dropdown-item">Dashboard</a>
                     <a href="php/logout.php" class="dropdown-item">Logout</a>
 
                     <?php
@@ -124,10 +128,10 @@ session_start();
 
             <div class="collapse navbar-collapse" id="myNav">
                 <ul class="navbar-nav">
-                    <li><a href="#" class="active"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="index.php" class="<?php echo ($current_page == 'index' || $current_page == '') ? 'active' : ''; ?>"><i class="fa-solid fa-house"></i></a></li>
 
                     <li class="dropdown mega-dropdown">
-                        <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle">
+                        <a href="#" data-bs-toggle="dropdown" class="<?php echo ($current_page == 'manufacturers') ? 'active' : ''; ?> dropdown-toggle">
                             TYRE MANUFACTURERS</a>
 
                         <div class="dropdown-menu mega-dropdown-menu">
@@ -170,7 +174,7 @@ session_start();
                     </li>
 
                     <li class="dropdown mega-dropdown">
-                        <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle">
+                        <a href="#" data-bs-toggle="dropdown" class="<?php echo ($current_page == 'services') ? 'active' : ''; ?> dropdown-toggle"  >
                             Services</a>
 
                         <div class="dropdown-menu mega-dropdown-menu">
@@ -205,11 +209,11 @@ session_start();
                         </div>
                     </li>
 
-                    <li><a href="gallery.php">Gallery</a></li>
-                    <li><a href="new-part-worn-tyre.php">New & Part Worn Tyres</a></li>
-                    <li><a href="blogs.php">Blog</a></li>
-                    <li><a href="about.php">About Us</a></li>
-                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="gallery.php"  class="<?php echo ($current_page == 'gallery') ? 'active' : ''; ?>" >Gallery</a></li>
+                    <li><a href="new-part-worn-tyre.php" class="<?php echo ($current_page == 'new-part-worn-tyre') ? 'active' : ''; ?>" >New & Part Worn Tyres</a></li>
+                    <li><a href="blogs.php" class="<?php echo ($current_page == 'blogs') ? 'active' : ''; ?>" >Blog</a></li>
+                    <li><a href="about.php" class="<?php echo ($current_page == 'about') ? 'active' : ''; ?>" >About Us</a></li>
+                    <li><a href="contact.php" class="<?php echo ($current_page == 'contact') ? 'active' : ''; ?>"  >Contact Us</a></li>
 
 
                 </ul>
