@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
             if ($user['verified'] == 0) {
 
+                $_SESSION["loggedin"] = true;
                 $_SESSION["user_id"] = $user["id"];
                 $_SESSION["email"] = $user["email"];
                 $_SESSION["admin"] = $user["admin"];
@@ -47,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
                 }
 
 
-                header("Location: ../index.php");
+                header("Location: ../user-dashboard.php");
                 die();
 
             } else {

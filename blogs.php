@@ -41,11 +41,11 @@
                         <!-- BLOG CARD -->
                         <div class="card rounded-0 mb-4 blog-card">
                             <div class="card-body">
-                                <h4><a href="blog-detail.html">15 Tips to Ensure Long-Lasting Tyres: Expert Advice by
+                                <h4><a href="blog-detail.php">15 Tips to Ensure Long-Lasting Tyres: Expert Advice by
                                         xpress-tyres</a></h4>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <a href="blog-detail.html">
+                                        <a href="blog-detail.php">
                                             <img src="assets/imgs/blogs/Untitled-1.jpg" width="100%" alt="">
                                         </a>
                                     </div>
@@ -54,7 +54,7 @@
                                         <p>24 hours Mobile Tyre Fitting | 15 Tips for better tyres performance
                                             Introduction: The performa</p>
                                         <div class="text-end">
-                                            <a href="blog-detail.html" class="main-btn">Read More</a>
+                                            <a href="blog-detail.php" class="main-btn">Read More</a>
                                         </div>
                                     </div>
 
@@ -75,11 +75,11 @@
                         <!-- BLOG CARD -->
                         <div class="card rounded-0 mb-4 blog-card">
                             <div class="card-body">
-                                <h4><a href="blog-detail.html">Emergency Tyre Changing Services in Manchester –
+                                <h4><a href="blog-detail.php">Emergency Tyre Changing Services in Manchester –
                                         xpress-tyres is Here To Help</a></h4>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <a href="blog-detail.html">
+                                        <a href="blog-detail.php">
                                             <img src="assets/imgs/blogs/Untitled-1-1.jpg" width="100%" alt="">
                                         </a>
                                     </div>
@@ -88,7 +88,7 @@
                                         <p>Quick Response for Emergency Tyre Changing Services in Manchester Our crew at
                                             Xpress-Tyres is well aware that ty</p>
                                         <div class="text-end">
-                                            <a href="blog-detail.html" class="main-btn">Read More</a>
+                                            <a href="blog-detail.php" class="main-btn">Read More</a>
                                         </div>
                                     </div>
 
@@ -109,11 +109,11 @@
                         <!-- BLOG CARD -->
                         <div class="card rounded-0 mb-4 blog-card">
                             <div class="card-body">
-                                <h4><a href="blog-detail.html">Xpress-Tyres: Your Ultimate Guide to Mobile Tyre
+                                <h4><a href="blog-detail.php">Xpress-Tyres: Your Ultimate Guide to Mobile Tyre
                                         Fitting</a></h4>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <a href="blog-detail.html">
+                                        <a href="blog-detail.php">
                                             <img src="assets/imgs/blogs/xpress-tyres-scaled.jpg" width="100%" alt="">
                                         </a>
                                     </div>
@@ -122,7 +122,7 @@
                                         <p>Introduction :Xpress-Tyres Convenience frequently ranks at the top of
                                             peoples’ lists of priorities in today’s fast-pa</p>
                                         <div class="text-end">
-                                            <a href="blog-detail.html" class="main-btn">Read More</a>
+                                            <a href="blog-detail.php" class="main-btn">Read More</a>
                                         </div>
                                     </div>
 
@@ -152,15 +152,15 @@
 
                             <div class="card-body">
                                 <p class="border-bottom m-0 py-2">
-                                    <a href="blog-detail.html"><i class="fa-solid fa-caret-right"></i> Xpress-Tyres:
+                                    <a href="blog-detail.php"><i class="fa-solid fa-caret-right"></i> Xpress-Tyres:
                                         Your Ultimate Guide to Mobile Tyre Fitting</a>
                                 </p>
                                 <p class="border-bottom m-0 py-2">
-                                    <a href="blog-detail.html"><i class="fa-solid fa-caret-right"></i> Emergency Tyre
+                                    <a href="blog-detail.php"><i class="fa-solid fa-caret-right"></i> Emergency Tyre
                                         Changing Services in Manchester – xpress-tyres is Here To Help</a>
                                 </p>
                                 <p class=" m-0 py-2">
-                                    <a href="blog-detail.html"><i class="fa-solid fa-caret-right"></i> 15 Tips to Ensure
+                                    <a href="blog-detail.php"><i class="fa-solid fa-caret-right"></i> 15 Tips to Ensure
                                         Long-Lasting Tyres: Expert Advice by xpress-tyres</a>
                                 </p>
                             </div>

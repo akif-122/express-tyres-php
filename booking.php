@@ -558,7 +558,7 @@
                             </div>
 
                             <div class="my-3">
-                                <a href="checkout.html">
+                                <a href="checkout.php">
                                     <button class="main-btn">PROCEED TO BOOKING</button>
                                 </a>
                             </div>

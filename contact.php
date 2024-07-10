@@ -104,68 +104,84 @@
                 <div class="col-lg-4 col-md-6 order-2 order-lg-3 mb-4">
                     <h3 class="contact-label">Contact Us</h3>
                     <div class="contact-form border">
-                        <div class="row">
+                        <p class="text-danger"><?php if (isset($_SESSION["msg"])) {
+                            echo $_SESSION["msg"];
+                        } ?></p>
+                        <p class="text-success"><?php if (isset($_SESSION["success"])) {
+                            echo $_SESSION["success"];
+                        } ?></p>
+                        <form action="php/contact.php" method="post">
+                            <div class="row">
 
-                            <div class="col-6 mb-3 px-2">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Your Name" class="form-control">
+                                <div class="col-6 mb-3 px-2">
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="Your Name" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-6 mb-3 px-2">
-                                <div class="form-group">
-                                    <input type="email" placeholder="E-Mail Address" class="form-control">
+                                <div class="col-6 mb-3 px-2">
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="E-Mail Address"
+                                            class="form-control">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-6 mb-3 px-2">
-                                <div class="form-group">
-                                    <input type="number" placeholder="Phone Number" class="form-control">
+                                <div class="col-6 mb-3 px-2">
+                                    <div class="form-group">
+                                        <input type="number" name="phone" placeholder="Phone Number"
+                                            class="form-control">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-6 mb-3 px-2">
-                                <div class="form-group">
-                                    <select class="form-select">
-                                        <option value="">Interests</option>
-                                        <option value="Balancing And Repairs">Balancing And Repairs</option>
-                                        <option value="Emergency Tyre Changing Services in Manchester by Xpress-Tyres">
-                                            Emergency Tyre Changing Services in Manchester by Xpress-Tyres</option>
-                                        <option value="The Impact of Hot Weather on Tyre Pressure">The Impact of Hot
-                                            Weather on Tyre Pressure</option>
-                                        <option value="Roadside Assistance Redefined Mobile Tyre Fitting Manchester">
-                                            Roadside Assistance Redefined Mobile Tyre Fitting Manchester</option>
-                                        <option
-                                            value="The Road to Energy Efficiency: A Deep Dive into Energy-Saving Tyres and the Role of Mobile Tyre Serv">
-                                            The Road to Energy Efficiency: A Deep Dive into Energy-Saving Tyres and the
-                                            Role of Mobile Tyre Serv</option>
-                                        <option
-                                            value="15 Tips to Ensure Long-Lasting Tyres: Expert Advice by xpress-tyres">
-                                            15 Tips to Ensure Long-Lasting Tyres: Expert Advice by xpress-tyres</option>
-                                        <option value="Xpress-Tyres: Your Ultimate Guide to Mobile Tyre Fitting">
-                                            Xpress-Tyres: Your Ultimate Guide to Mobile Tyre Fitting</option>
-                                        <option value="24X7 Service Home Work Roadside">24X7 Service Home Work Roadside
-                                        </option>
-                                        <option value="TPMS">TPMS</option>
-                                        <option value="Valves">Valves</option>
-                                        <option value="Rim Crack Repair">Rim Crack Repair</option>
-                                        <option value="Locking Nut Removal">Locking Nut Removal</option>
-                                    </select>
+                                <div class="col-6 mb-3 px-2">
+
+                                    <div class="form-group">
+                                        <select class="form-select" name="interest">
+                                            <option value="">Interests</option>
+                                            <option value="Balancing And Repairs">Balancing And Repairs</option>
+                                            <option
+                                                value="Emergency Tyre Changing Services in Manchester by Xpress-Tyres">
+                                                Emergency Tyre Changing Services in Manchester by Xpress-Tyres</option>
+                                            <option value="The Impact of Hot Weather on Tyre Pressure">The Impact of Hot
+                                                Weather on Tyre Pressure</option>
+                                            <option
+                                                value="Roadside Assistance Redefined Mobile Tyre Fitting Manchester">
+                                                Roadside Assistance Redefined Mobile Tyre Fitting Manchester</option>
+                                            <option
+                                                value="The Road to Energy Efficiency: A Deep Dive into Energy-Saving Tyres and the Role of Mobile Tyre Serv">
+                                                The Road to Energy Efficiency: A Deep Dive into Energy-Saving Tyres and
+                                                the
+                                                Role of Mobile Tyre Serv</option>
+                                            <option
+                                                value="15 Tips to Ensure Long-Lasting Tyres: Expert Advice by xpress-tyres">
+                                                15 Tips to Ensure Long-Lasting Tyres: Expert Advice by xpress-tyres
+                                            </option>
+                                            <option value="Xpress-Tyres: Your Ultimate Guide to Mobile Tyre Fitting">
+                                                Xpress-Tyres: Your Ultimate Guide to Mobile Tyre Fitting</option>
+                                            <option value="24X7 Service Home Work Roadside">24X7 Service Home Work
+                                                Roadside
+                                            </option>
+                                            <option value="TPMS">TPMS</option>
+                                            <option value="Valves">Valves</option>
+                                            <option value="Rim Crack Repair">Rim Crack Repair</option>
+                                            <option value="Locking Nut Removal">Locking Nut Removal</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-12 mb-3 px-2">
-                                <div class="form-group">
-                                    <textarea name="" rows="5" placeholder="Inquiry" class="form-control"
-                                        id=""></textarea>
+                                <div class="col-12 mb-3 px-2">
+                                    <div class="form-group">
+                                        <textarea name="message" rows="5" placeholder="Inquiry" class="form-control"
+                                            id=""></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="main-btn">Submit</button>
-                            </div>
+                                <div class="col-12">
+                                    <button class="main-btn">Submit</button>
+                                </div>
 
 
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -176,7 +192,9 @@
 
 
         <?php
-            include_once "includes/footer.php";
+        include_once "includes/footer.php";
+        unset($_SESSION["msg"]);
+        unset($_SESSION["success"]);
         ?>
 
 

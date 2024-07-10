@@ -2,10 +2,11 @@
 <?php
 
 
-
-if (isset($_SESSION["user_id"])) {
+session_start();
+if (!$_SESSION["loggedin"]) {
     header("Location: index.php");
 }
+session_abort();
 
 ?>
 <html lang="en">
@@ -52,18 +53,7 @@ if (isset($_SESSION["user_id"])) {
 
             <div class="">
 
-                <?php
-                // include "php/config.php";
-                // $userId = $_SESSION["user_id"];
-
-                // $sql = "SELECT * FROM `users` WHERE `id` = $userId";
-                // $res = mysqli_query($conn, $sql);
-
-                // if (mysqli_num_rows($res) == 1) {
-                //     $row = mysqli_fetch_assoc($res);
-                // }
-
-                ?>
+                
 
                 <div class="row">
                     <div class="col-md-3">
@@ -90,7 +80,7 @@ if (isset($_SESSION["user_id"])) {
                                     <div class="col-md-6">
                                         <p><strong>Phone:</strong> <?php echo $row["phone"]; ?></p>
                                     </div>
-                                   
+
 
                                 </div>
 

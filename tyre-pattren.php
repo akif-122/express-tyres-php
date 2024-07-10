@@ -45,21 +45,21 @@
                             <h5>ALL TYRES PATTERNS</h5>
                             <div class="tyres-manu pattern">
                                 <ul>
-                                    <li><a href="tyre-pattren.html" class="active">ECONO DRIVE</a></li>
-                                    <li><a href="tyre-pattren.html">FASTRESPONSE</a></li>
-                                    <li><a href="tyre-pattren.html">GRANDTREK AT20</a></li>
-                                    <li><a href="tyre-pattren.html">GRANDTREK AT5</a></li>
-                                    <li><a href="tyre-pattren.html">GRANDTREK ST20</a></li>
-                                    <li><a href="tyre-pattren.html">GRANDTREK ST30</a></li>
-                                    <li><a href="tyre-pattren.html">SP ER RESPONSE 2</a></li>
-                                    <li><a href="tyre-pattren.html">SP ER SPORT 3D</a></li>
-                                    <li><a href="tyre-pattren.html">SP ER SPORT 4D</a></li>
-                                    <li><a href="tyre-pattren.html">SP ER SPORT5</a></li>
-                                    <li><a href="tyre-pattren.html">SP QuattroMaxx</a></li>
-                                    <li><a href="tyre-pattren.html">SP Sport 01</a></li>
-                                    <li><a href="tyre-pattren.html">SP SPORT 270</a></li>
-                                    <li><a href="tyre-pattren.html">SP Sport BluResponse</a></li>
-                                    <li><a href="tyre-pattren.html">SP Sport FastResponse</a></li>
+                                    <li><a href="tyre-pattren.php" class="active">ECONO DRIVE</a></li>
+                                    <li><a href="tyre-pattren.php">FASTRESPONSE</a></li>
+                                    <li><a href="tyre-pattren.php">GRANDTREK AT20</a></li>
+                                    <li><a href="tyre-pattren.php">GRANDTREK AT5</a></li>
+                                    <li><a href="tyre-pattren.php">GRANDTREK ST20</a></li>
+                                    <li><a href="tyre-pattren.php">GRANDTREK ST30</a></li>
+                                    <li><a href="tyre-pattren.php">SP ER RESPONSE 2</a></li>
+                                    <li><a href="tyre-pattren.php">SP ER SPORT 3D</a></li>
+                                    <li><a href="tyre-pattren.php">SP ER SPORT 4D</a></li>
+                                    <li><a href="tyre-pattren.php">SP ER SPORT5</a></li>
+                                    <li><a href="tyre-pattren.php">SP QuattroMaxx</a></li>
+                                    <li><a href="tyre-pattren.php">SP Sport 01</a></li>
+                                    <li><a href="tyre-pattren.php">SP SPORT 270</a></li>
+                                    <li><a href="tyre-pattren.php">SP Sport BluResponse</a></li>
+                                    <li><a href="tyre-pattren.php">SP Sport FastResponse</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
                                                 </div>
 
                                             </form>
-                                            <a href="booking.html">
+                                            <a href="booking.php">
                                                 <button class="main-btn w-100">
                                                     BUY <i class="fa-solid fa-angle-right"></i>
                                                 </button>
@@ -233,7 +233,7 @@
 
 
                                             </form>
-                                            <a href="booking.html">
+                                            <a href="booking.php">
                                                 <button class="main-btn w-100">
                                                     BUY <i class="fa-solid fa-angle-right"></i>
                                                 </button>
@@ -322,7 +322,7 @@
 
 
                                             </form>
-                                            <a href="booking.html">
+                                            <a href="booking.php">
                                                 <button class="main-btn w-100">
                                                     BUY <i class="fa-solid fa-angle-right"></i>
                                                 </button>
@@ -411,7 +411,7 @@
 
 
                                             </form>
-                                            <a href="booking.html">
+                                            <a href="booking.php">
                                                 <button class="main-btn w-100">
                                                     BUY <i class="fa-solid fa-angle-right"></i>
                                                 </button>

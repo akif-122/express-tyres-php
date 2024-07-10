@@ -236,87 +236,87 @@
                             <div class="tyres-manu">
                                 <ul>
                                     <li>
-                                        <a href="manufacturers.html"><strong>Accelera</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Accelera</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i> </a>
                                     </li>
 
                                     <li>
-                                        <a href="manufacturers.html"><strong>Anchee</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Anchee</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
 
                                     <li>
-                                        <a href="manufacturers.html"><strong>Antares</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Antares</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
 
                                     <li>
-                                        <a href="manufacturers.html"><strong>Aoteli</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Aoteli</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
 
                                     <li>
-                                        <a href="manufacturers.html"><strong>Apollo</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Apollo</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>ATLAS</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>ATLAS</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>Avon</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Avon</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>BANOZE</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>BANOZE</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>BLACKARROW</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>BLACKARROW</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>Blacklion</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Blacklion</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>Bridgestone</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Bridgestone</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>CHURCHILL</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>CHURCHILL</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>COMFORSER</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>COMFORSER</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>Compass</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Compass</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>Continental</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Continental</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>Davanti</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Davanti</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>DELMAX</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>DELMAX</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html" class="active"><strong>Dunlop</strong> Tyres <i
+                                        <a href="manufacturers.php" class="active"><strong>Dunlop</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>DURATURN</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>DURATURN</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a href="manufacturers.html"><strong>Dynamo</strong> Tyres <i
+                                        <a href="manufacturers.php"><strong>Dynamo</strong> Tyres <i
                                                 class="fa-solid fa-angle-right"></i></a>
                                     </li>
                                 </ul>
@@ -339,10 +339,10 @@
 
                                             <div class="col-lg-8">
                                                 <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.html">Dunlop ECONO DRIVE</a>
+                                                    <a href="tyre-pattren.php">Dunlop ECONO DRIVE</a>
                                                     <p>Price from <strong>£127.05</strong></p>
                                                     <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.html">Find OUT MORE <i
+                                                        <a href="tyre-pattren.php">Find OUT MORE <i
                                                                 class="fa-solid fa-angle-right"></i></a>
                                                     </div>
                                                 </div>
@@ -365,10 +365,10 @@
 
                                             <div class="col-lg-8">
                                                 <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.html">Dunlop FASTRESPONSE</a>
+                                                    <a href="tyre-pattren.php">Dunlop FASTRESPONSE</a>
                                                     <p>Price from <strong>72.05</strong></p>
                                                     <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.html">Find OUT MORE <i
+                                                        <a href="tyre-pattren.php">Find OUT MORE <i
                                                                 class="fa-solid fa-angle-right"></i></a>
                                                     </div>
                                                 </div>
@@ -391,10 +391,10 @@
 
                                             <div class="col-lg-8">
                                                 <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.html">Dunlop GRANDTREK AT20</a>
+                                                    <a href="tyre-pattren.php">Dunlop GRANDTREK AT20</a>
                                                     <p>Price from <strong>£122.05</strong></p>
                                                     <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.html">Find OUT MORE <i
+                                                        <a href="tyre-pattren.php">Find OUT MORE <i
                                                                 class="fa-solid fa-angle-right"></i></a>
                                                     </div>
                                                 </div>
@@ -417,10 +417,10 @@
 
                                             <div class="col-lg-8">
                                                 <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.html">Dunlop GRANDTREK AT5</a>
+                                                    <a href="tyre-pattren.php">Dunlop GRANDTREK AT5</a>
                                                     <p>Price from <strong>£127.05</strong></p>
                                                     <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.html">Find OUT MORE <i
+                                                        <a href="tyre-pattren.php">Find OUT MORE <i
                                                                 class="fa-solid fa-angle-right"></i></a>
                                                     </div>
                                                 </div>
@@ -443,10 +443,10 @@
 
                                             <div class="col-lg-8">
                                                 <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.html">Dunlop GRANDTREK ST20</a>
+                                                    <a href="tyre-pattren.php">Dunlop GRANDTREK ST20</a>
                                                     <p>Price from <strong>111.05</strong></p>
                                                     <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.html">Find OUT MORE <i
+                                                        <a href="tyre-pattren.php">Find OUT MORE <i
                                                                 class="fa-solid fa-angle-right"></i></a>
                                                     </div>
                                                 </div>
@@ -469,10 +469,10 @@
 
                                             <div class="col-lg-8">
                                                 <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.html">Dunlop GRANDTREK ST30</a>
+                                                    <a href="tyre-pattren.php">Dunlop GRANDTREK ST30</a>
                                                     <p>Price from <strong>£117.05</strong></p>
                                                     <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.html">Find OUT MORE <i
+                                                        <a href="tyre-pattren.php">Find OUT MORE <i
                                                                 class="fa-solid fa-angle-right"></i></a>
                                                     </div>
                                                 </div>
@@ -495,10 +495,10 @@
 
                                             <div class="col-lg-8">
                                                 <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.html">Dunlop SP ER RESPONSE 2</a>
+                                                    <a href="tyre-pattren.php">Dunlop SP ER RESPONSE 2</a>
                                                     <p>Price from <strong>71.05</strong></p>
                                                     <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.html">Find OUT MORE <i
+                                                        <a href="tyre-pattren.php">Find OUT MORE <i
                                                                 class="fa-solid fa-angle-right"></i></a>
                                                     </div>
                                                 </div>

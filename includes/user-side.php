@@ -1,3 +1,5 @@
+
+
 <?php
 include "php/config.php";
 $current_page = basename($_SERVER['REQUEST_URI'], ".php");
