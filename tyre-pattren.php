@@ -1,3 +1,6 @@
+<?php
+include "php/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,8 +29,11 @@
 <body>
 
     <div class="wrapper">
-        <?php include_once "includes/header.php" ?>
 
+        <?php
+        include_once "includes/header.php";
+
+        ?>
 
 
 
@@ -36,7 +42,24 @@
         <!-- TYRES PATTERN SECTION START -->
         <section class="tyres-detail tyre-pattern">
             <div class="container pattern-container">
-                <h2>Dunlop ECONO DRIVE</h2>
+
+                <?php
+
+
+                $sql = "SELECT * FROM `tyre_patteren` JOIN `manufacturers` ON tyre_patteren.manu_id = manufacturers.id  ";
+                $res = mysqli_query($conn, $sql);
+
+
+                if (mysqli_num_rows($res) > 0) {
+                    $row1 = mysqli_fetch_assoc($res);
+
+
+                    ?>
+
+
+
+                    <h2><?php echo $row1["manu_name"] . " " . $row1["p_name"]; ?></h2>
+                <?php } ?>
 
                 <!-- TYRES START-->
                 <section class="tyres">
@@ -45,21 +68,21 @@
                             <h5>ALL TYRES PATTERNS</h5>
                             <div class="tyres-manu pattern">
                                 <ul>
-                                    <li><a href="tyre-pattren.php" class="active">ECONO DRIVE</a></li>
-                                    <li><a href="tyre-pattren.php">FASTRESPONSE</a></li>
-                                    <li><a href="tyre-pattren.php">GRANDTREK AT20</a></li>
-                                    <li><a href="tyre-pattren.php">GRANDTREK AT5</a></li>
-                                    <li><a href="tyre-pattren.php">GRANDTREK ST20</a></li>
-                                    <li><a href="tyre-pattren.php">GRANDTREK ST30</a></li>
-                                    <li><a href="tyre-pattren.php">SP ER RESPONSE 2</a></li>
-                                    <li><a href="tyre-pattren.php">SP ER SPORT 3D</a></li>
-                                    <li><a href="tyre-pattren.php">SP ER SPORT 4D</a></li>
-                                    <li><a href="tyre-pattren.php">SP ER SPORT5</a></li>
-                                    <li><a href="tyre-pattren.php">SP QuattroMaxx</a></li>
-                                    <li><a href="tyre-pattren.php">SP Sport 01</a></li>
-                                    <li><a href="tyre-pattren.php">SP SPORT 270</a></li>
-                                    <li><a href="tyre-pattren.php">SP Sport BluResponse</a></li>
-                                    <li><a href="tyre-pattren.php">SP Sport FastResponse</a></li>
+                                    <?php
+                                    $mid = $_GET["mid"];
+                                    $pid = $_GET["pid"];
+
+                                    $sql2 = "SELECT * FROM `tyre_patteren` WHERE manu_id = '$mid' ";
+
+                                    $res2 = mysqli_query($conn, $sql2);
+                                    while ($row = mysqli_fetch_assoc($res2)) {
+                                        $active = ($row["pid"] == $_GET["pid"]) ? "active" : "";
+                                        ?>
+                                        <li><a href="tyre-pattren.php?mid=<?php echo $mid ?>&pid=<?php echo $row["pid"] ?>"
+                                                class="<?php echo $active ?>"><?php echo $row["p_name"]; ?></a></li>
+                                        <?php
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
@@ -67,362 +90,116 @@
 
                             <div class="row">
 
-                                <!-- CARD -->
-                                <div class="col-lg-4 col-sm-6 mb-5">
-                                    <div class="pattern-card">
-                                        <div class="patt-card-head">
-                                            <div class="pt-img">
-                                                <img src="assets/imgs/tyres/econodrive.jpg" alt="">
-                                            </div>
+                                <?php
+                                $sql4 = "SELECT * FROM tyres  WHERE p_id = '$pid' AND manu_id = '$mid'";
+                                $res4 = mysqli_query($conn, $sql4);
 
-                                            <div class="feature">
+                                if (mysqli_num_rows($res4) > 0) {
+                                    while ($row4 = mysqli_fetch_assoc($res4)) {
+                                        ?>
 
-                                                <ul class="list-unstyled">
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/fuel-tyre.jpg" alt="">
-                                                        </div>
-                                                        <span class="green">B</span>
-                                                    </li>
+                                        <!-- CARD -->
+                                        <div class="col-lg-4 col-sm-6 mb-5">
+                                            <div class="pattern-card">
+                                                <div class="patt-card-head">
+                                                    <div class="pt-img">
+                                                        <img src="assets/imgs/tyres/econodrive.jpg" alt="">
+                                                    </div>
 
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/wet_grip.jpg" alt="">
-                                                        </div>
-                                                        <span class="orange">B</span>
-                                                    </li>
+                                                    <div class="feature">
 
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/road-noise-icon.jpg" alt="">
-                                                        </div>
-                                                        <span class="black">72</span>
-                                                    </li>
-                                                </ul>
+                                                        <ul class="list-unstyled">
+                                                            <li class="d-flex align-items-center">
+                                                                <div class="">
+                                                                    <img src="assets/imgs/fuel-tyre.jpg" alt="">
+                                                                </div>
+                                                                <span
+                                                                    class="green"><?php echo $row4["fuel_efficiency"]; ?></span>
+                                                            </li>
 
-                                            </div>
+                                                            <li class="d-flex align-items-center">
+                                                                <div class="">
+                                                                    <img src="assets/imgs/wet_grip.jpg" alt="">
+                                                                </div>
+                                                                <span class="orange"><?php echo $row4["wet-grip"]; ?></span>
+                                                            </li>
 
-                                        </div>
+                                                            <li class="d-flex align-items-center">
+                                                                <div class="">
+                                                                    <img src="assets/imgs/road-noise-icon.jpg" alt="">
+                                                                </div>
+                                                                <span class="black"><?php echo $row4["road_noise"]; ?></span>
+                                                            </li>
+                                                        </ul>
 
-                                        <div class="tyre-brand">
-                                            <img src="assets/imgs/dunlop.png" alt="">
-                                        </div>
+                                                    </div>
 
-                                        <div class="tyre-detail text-center">
-                                            <h5>ECONO DRIVE</h5>
-                                            <p>225/55 R17 109/107H</p>
-                                        </div>
-
-                                        <div class="durability">
-                                            <div class="icon">
-                                                <img src="assets/imgs/car.png" alt="">
-                                            </div>
-                                            <div class="icon">
-                                                <img src="assets/imgs/summer-icon.png" alt="">
-                                            </div>
-                                            <div class="icon">
-                                                <img src="assets/imgs/budget.png" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="price">
-                                            <form a>
-
-                                                <div class="price-label">
-                                                    <h4>£127.05</h4>
-                                                    <p>Garage Fitted</p>
                                                 </div>
 
-                                                <div class="form-group mb-2">
-                                                    <select name="quantity" class="form-select">
-                                                        <option value="1">1 Tyre £<!--  -->127.05</option>
-                                                        <option value="2">2 Tyre £<!--  -->254.1</option>
-                                                        <option value="3">3 Tyre £<!--  -->381.15</option>
-                                                        <option value="4">4 Tyre £<!--  -->508.2</option>
-                                                    </select>
+                                                <div class="tyre-brand">
+                                                    <img src="assets/imgs/dunlop.png" alt="">
                                                 </div>
 
-                                            </form>
-                                            <a href="booking.php">
-                                                <button class="main-btn w-100">
-                                                    BUY <i class="fa-solid fa-angle-right"></i>
-                                                </button>
-                                            </a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <!-- CARD -->
-
-                                <!-- CARD -->
-                                <div class="col-lg-4 col-sm-6 mb-5">
-                                    <div class="pattern-card">
-                                        <div class="patt-card-head">
-                                            <div class="pt-img">
-                                                <img src="assets/imgs/tyres/econodrive.jpg" alt="">
-                                            </div>
-
-                                            <div class="feature">
-
-                                                <ul class="list-unstyled">
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/fuel-tyre.jpg" alt="">
-                                                        </div>
-                                                        <span class="green">D</span>
-                                                    </li>
-
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/wet_grip.jpg" alt="">
-                                                        </div>
-                                                        <span class="orange">C</span>
-                                                    </li>
-
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/road-noise-icon.jpg" alt="">
-                                                        </div>
-                                                        <span class="black">72</span>
-                                                    </li>
-                                                </ul>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="tyre-brand">
-                                            <img src="assets/imgs/dunlop.png" alt="">
-                                        </div>
-
-                                        <div class="tyre-detail text-center">
-                                            <h5>ECONO DRIVE</h5>
-                                            <p>225/55 R17 109/107H</p>
-                                        </div>
-
-                                        <div class="durability">
-                                            <div class="icon">
-                                                <img src="assets/imgs/car.png" alt="">
-                                            </div>
-                                            <div class="icon">
-                                                <img src="assets/imgs/summer-icon.png" alt="">
-                                            </div>
-                                            <div class="icon">
-                                                <img src="assets/imgs/budget.png" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="price">
-                                            <form action="">
-
-                                                <div class="price-label">
-                                                    <h4>£132.05</h4>
-                                                    <p>Garage Fitted</p>
+                                                <div class="tyre-detail text-center">
+                                                    <h5><?php echo $row4["tyre_name"] ?></h5>
+                                                    <p><?php echo $row4["size"] ?></p>
                                                 </div>
 
-                                                <div class="form-group mb-2">
-                                                    <select name="quantity" class="form-select">
-                                                        <option value="1">1 Tyre £<!--  -->127.05</option>
-                                                        <option value="2">2 Tyre £<!--  -->254.1</option>
-                                                        <option value="3">3 Tyre £<!--  -->381.15</option>
-                                                        <option value="4">4 Tyre £<!--  -->508.2</option>
-                                                    </select>
+                                                <div class="durability">
+                                                    <?php
+                                                    if ($row4['tyre_type'] == "car") {
+                                                        ?>
+                                                        <div class="icon">
+                                                            <img src="assets/imgs/car.png" alt="">
+                                                        </div>
+                                                    <? } ?>
+                                                    <div class="icon">
+
+                                                        <img src="assets/imgs/summer-icon.png" alt="">
+                                                    </div>
+                                                    <div class="icon">
+                                                        <img src="assets/imgs/budget.png" alt="">
+                                                    </div>
+                                                </div>
+
+                                                <div class="price">
+                                                    <form>
+
+                                                        <div class="price-label">
+                                                            <h4>£<?php echo $row4["tyre_price"] ?></h4>
+                                                            <p>Garage Fitted</p>
+                                                        </div>
+
+                                                        <div class="form-group mb-2">
+                                                            <select name="quantity" class="form-select">
+                                                                <option value="1">1 Tyre £<?php echo $row4["tyre_price"] ?></option>
+                                                                <option value="2">2 Tyre £<?php echo $row4["tyre_price"] * 2 ?></option>
+                                                                <option value="3">3 Tyre £<?php echo $row4["tyre_price"] * 3 ?></option>
+                                                                <option value="4">4 Tyre £<?php echo $row4["tyre_price"] * 4 ?></option>
+                                                            </select>
+                                                        </div>
+
+                                                    </form>
+                                                    <a href="booking.php">
+                                                        <button class="main-btn w-100">
+                                                            BUY <i class="fa-solid fa-angle-right"></i>
+                                                        </button>
+                                                    </a>
                                                 </div>
 
 
-
-                                            </form>
-                                            <a href="booking.php">
-                                                <button class="main-btn w-100">
-                                                    BUY <i class="fa-solid fa-angle-right"></i>
-                                                </button>
-                                            </a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <!-- CARD -->
-
-                                <!-- CARD -->
-                                <div class="col-lg-4 col-sm-6 mb-5">
-                                    <div class="pattern-card">
-                                        <div class="patt-card-head">
-                                            <div class="pt-img">
-                                                <img src="assets/imgs/tyres/econodrive.jpg" alt="">
-                                            </div>
-
-                                            <div class="feature">
-
-                                                <ul class="list-unstyled">
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/fuel-tyre.jpg" alt="">
-                                                        </div>
-                                                        <span class="green">B</span>
-                                                    </li>
-
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/wet_grip.jpg" alt="">
-                                                        </div>
-                                                        <span class="orange">B</span>
-                                                    </li>
-
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/road-noise-icon.jpg" alt="">
-                                                        </div>
-                                                        <span class="black">72</span>
-                                                    </li>
-                                                </ul>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="tyre-brand">
-                                            <img src="assets/imgs/dunlop.png" alt="">
-                                        </div>
-
-                                        <div class="tyre-detail text-center">
-                                            <h5>ECONO DRIVE</h5>
-                                            <p>225/55 R17 109/107H</p>
-                                        </div>
-
-                                        <div class="durability">
-                                            <div class="icon">
-                                                <img src="assets/imgs/car.png" alt="">
-                                            </div>
-                                            <div class="icon">
-                                                <img src="assets/imgs/summer-icon.png" alt="">
-                                            </div>
-                                            <div class="icon">
-                                                <img src="assets/imgs/budget.png" alt="">
                                             </div>
                                         </div>
+                                        <!-- CARD -->
 
-                                        <div class="price">
-                                            <form action="">
-
-                                                <div class="price-label">
-                                                    <h4>£127.05</h4>
-                                                    <p>Garage Fitted</p>
-                                                </div>
-
-                                                <div class="form-group mb-2">
-                                                    <select name="quantity" class="form-select">
-                                                        <option value="1">1 Tyre £<!--  -->127.05</option>
-                                                        <option value="2">2 Tyre £<!--  -->254.1</option>
-                                                        <option value="3">3 Tyre £<!--  -->381.15</option>
-                                                        <option value="4">4 Tyre £<!--  -->508.2</option>
-                                                    </select>
-                                                </div>
-
-
-                                            </form>
-                                            <a href="booking.php">
-                                                <button class="main-btn w-100">
-                                                    BUY <i class="fa-solid fa-angle-right"></i>
-                                                </button>
-                                            </a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <!-- CARD -->
-
-                                <!-- CARD -->
-                                <div class="col-lg-4 col-sm-6 mb-5">
-                                    <div class="pattern-card">
-                                        <div class="patt-card-head">
-                                            <div class="pt-img">
-                                                <img src="assets/imgs/tyres/econodrive.jpg" alt="">
-                                            </div>
-
-                                            <div class="feature">
-
-                                                <ul class="list-unstyled">
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/fuel-tyre.jpg" alt="">
-                                                        </div>
-                                                        <span class="green">B</span>
-                                                    </li>
-
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/wet_grip.jpg" alt="">
-                                                        </div>
-                                                        <span class="orange">B</span>
-                                                    </li>
-
-                                                    <li class="d-flex align-items-center">
-                                                        <div class="">
-                                                            <img src="assets/imgs/road-noise-icon.jpg" alt="">
-                                                        </div>
-                                                        <span class="black">72</span>
-                                                    </li>
-                                                </ul>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="tyre-brand">
-                                            <img src="assets/imgs/dunlop.png" alt="">
-                                        </div>
-
-                                        <div class="tyre-detail text-center">
-                                            <h5>ECONO DRIVE</h5>
-                                            <p>225/55 R17 109/107H</p>
-                                        </div>
-
-                                        <div class="durability">
-                                            <div class="icon">
-                                                <img src="assets/imgs/car.png" alt="">
-                                            </div>
-                                            <div class="icon">
-                                                <img src="assets/imgs/summer-icon.png" alt="">
-                                            </div>
-                                            <div class="icon">
-                                                <img src="assets/imgs/budget.png" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="price">
-                                            <form action="">
-
-                                                <div class="price-label">
-                                                    <h4>£127.05</h4>
-                                                    <p>Garage Fitted</p>
-                                                </div>
-
-                                                <div class="form-group mb-2">
-                                                    <select name="quantity" class="form-select">
-                                                        <option value="1">1 Tyre £<!--  -->127.05</option>
-                                                        <option value="2">2 Tyre £<!--  -->254.1</option>
-                                                        <option value="3">3 Tyre £<!--  -->381.15</option>
-                                                        <option value="4">4 Tyre £<!--  -->508.2</option>
-                                                    </select>
-                                                </div>
-
-
-                                            </form>
-                                            <a href="booking.php">
-                                                <button class="main-btn w-100">
-                                                    BUY <i class="fa-solid fa-angle-right"></i>
-                                                </button>
-                                            </a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <!-- CARD -->
-
+                                        <?php
+                                    }
+                                } }else {
+                                    ?>
+                                    <h5>No record Found</h5>
+                                    <?php
+                                }
+                                ?>
 
 
                             </div>

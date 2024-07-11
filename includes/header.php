@@ -1,15 +1,16 @@
 <?php
 session_start();
 
-$current_page = basename($_SERVER['REQUEST_URI'], ".php");
+$current_page= basename($_SERVER['REQUEST_URI'], ".php");
 
+$current_page = explode(".", $current_page);
 
 ?>
 <div class="wrapper">
     <!-- TOP BAR SECTION START -->
     <section class="top-bar d-flex align-items-center justify-content-between ">
         <ul class="m-0 d-flex align-items-center list-unstyled">
-            <li><a href="#" >Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
@@ -128,53 +129,48 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
 
             <div class="collapse navbar-collapse" id="myNav">
                 <ul class="navbar-nav">
-                    <li><a href="index.php" class="<?php echo ($current_page == 'index' || $current_page == '') ? 'active' : ''; ?>"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="index.php"
+                            class="<?php echo ($current_page[0] == 'index' || $current_page[0] == '') ? 'active' : ''; ?>"><i
+                                class="fa-solid fa-house"></i></a></li>
 
-                    <li class="dropdown mega-dropdown">
-                        <a href="#" data-bs-toggle="dropdown" class="<?php echo ($current_page == 'manufacturers') ? 'active' : ''; ?> dropdown-toggle">
-                            TYRE MANUFACTURERS</a>
 
-                        <div class="dropdown-menu mega-dropdown-menu">
-                            <div class="row">
-                                <div class="col-md-4 col-lg-3">
-                                    <a href="manufacturers.php">Maxxis Tyres</a>
+                   
+
+                    <?php
+                    include "config.php";
+                    $sql = "SELECT * FROM  `manufacturers` ORDER BY id desc LIMIT 8";
+                    $res = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($res) > 0) {
+                        ?>
+                        <li class="dropdown mega-dropdown">
+                            <a href="#" data-bs-toggle="dropdown"
+                                class="<?php echo ($current_page[0] == 'manufacturers') ? 'active' : ''; ?> dropdown-toggle">
+                                TYRE MANUFACTURERS</a>
+
+
+
+                            <div class="dropdown-menu mega-dropdown-menu">
+                                <div class="row">
+
+                                    <?php
+                                    while ($row = mysqli_fetch_assoc($res)) { ?>
+
+                                        <div class="col-md-4 col-lg-3">
+                                            <a href="manufacturers.php?id=<?php echo $row["id"]; ?>"><?php echo $row["manu_name"] ?> Tyres </a>
+                                        </div>
+
+                                    <?php } ?>
+
                                 </div>
-
-                                <div class="col-md-4 col-lg-3">
-                                    <a href="manufacturers.php">Pirelli Tyres</a>
-                                </div>
-
-                                <div class="col-md-4 col-lg-3">
-                                    <a href="manufacturers.php">Dunlop Tyres</a>
-                                </div>
-
-                                <div class="col-md-4 col-lg-3">
-                                    <a href="manufacturers.php">Bridgestone Tyres</a>
-                                </div>
-
-                                <div class="col-md-4 col-lg-3">
-                                    <a href="manufacturers.php">Continental Tyres</a>
-                                </div>
-
-                                <div class="col-md-4 col-lg-3">
-                                    <a href="manufacturers.php">Goodyear Tyres</a>
-                                </div>
-
-                                <div class="col-md-4 col-lg-3">
-                                    <a href="manufacturers.php">Michelin Tyres</a>
-                                </div>
-
-                                <div class="col-md-4 col-lg-3">
-                                    <a href="manufacturers.php">Nexen Tyres</a>
-                                </div>
-
                             </div>
-                        </div>
 
-                    </li>
+                        </li>
+                    <?php } ?>
 
                     <li class="dropdown mega-dropdown">
-                        <a href="#" data-bs-toggle="dropdown" class="<?php echo ($current_page == 'services') ? 'active' : ''; ?> dropdown-toggle"  >
+                        <a href="#" data-bs-toggle="dropdown"
+                            class="<?php echo ($current_page[0] == 'services') ? 'active' : ''; ?> dropdown-toggle">
                             Services</a>
 
                         <div class="dropdown-menu mega-dropdown-menu">
@@ -209,11 +205,17 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
                         </div>
                     </li>
 
-                    <li><a href="gallery.php"  class="<?php echo ($current_page == 'gallery') ? 'active' : ''; ?>" >Gallery</a></li>
-                    <li><a href="new-part-worn-tyre.php" class="<?php echo ($current_page == 'new-part-worn-tyre') ? 'active' : ''; ?>" >New & Part Worn Tyres</a></li>
-                    <li><a href="blogs.php" class="<?php echo ($current_page == 'blogs') ? 'active' : ''; ?>" >Blog</a></li>
-                    <li><a href="about.php" class="<?php echo ($current_page == 'about') ? 'active' : ''; ?>" >About Us</a></li>
-                    <li><a href="contact.php" class="<?php echo ($current_page == 'contact') ? 'active' : ''; ?>"  >Contact Us</a></li>
+                    <li><a href="gallery.php"
+                            class="<?php echo ($current_page[0] == 'gallery') ? 'active' : ''; ?>">Gallery</a></li>
+                    <li><a href="new-part-worn-tyre.php"
+                            class="<?php echo ($current_page[0] == 'new-part-worn-tyre') ? 'active' : ''; ?>">New & Part
+                            Worn Tyres</a></li>
+                    <li><a href="blogs.php" class="<?php echo ($current_page[0] == 'blogs') ? 'active' : ''; ?>">Blog</a>
+                    </li>
+                    <li><a href="about.php" class="<?php echo ($current_page[0] == 'about') ? 'active' : ''; ?>">About
+                            Us</a></li>
+                    <li><a href="contact.php"
+                            class="<?php echo ($current_page[0] == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
 
 
                 </ul>

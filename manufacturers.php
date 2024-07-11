@@ -1,3 +1,6 @@
+<?php
+include_once "php/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,12 +30,20 @@
 
     <div class="wrapper">
         <?php include_once "includes/header.php" ?>
+        <?php
+        $id = $_GET["id"];
+        $sql1 = "SELECT * FROM `manufacturers` WHERE id = '$id'";
+        $res1 = mysqli_query($conn, $sql1);
+
+        $row1 = mysqli_fetch_assoc($res1);
+        ?>
+
 
         <!-- HERO BANNER SECTION START -->
         <section class="hero-banner " style="background-image: url('assets/imgs/dunlop-banner.jpg');">
             <div class="container">
                 <div class="banner-text">
-                    <h1>Dunlop Tyres</h1>
+                    <h1><?php echo $row1["manu_name"] ?> Tyres</h1>
                 </div>
             </div>
         </section>
@@ -184,141 +195,94 @@
         <!-- TYRES DETAIL SECTION START -->
         <section class="tyres-detail">
             <div class="container">
-                <h2 class="text-center">Dunlop Tyres</h2>
 
-                <div class="tyres-text">
-                    <p>We can all agree that a set of good tyres is a must-have to keep the vehicle up and running for a
-                        long time. If you have been driving with worn-out tyres for years or are looking for some
-                        quality tyres, wait no more. A set of good tyres can have a huge impact on your overall driving
-                        experience. To ease this task for you, <strong>XPRESS TYRES LTD</strong>. recommends premier
-                        <strong>Dunlop tyres Manchester</strong>. Their latest range is available online at our garage.
-                    </p>
 
-                    <p>Pneumatic tyre pioneer John Boyd Dunlop founded Dunlop in Birmingham, England, in 1889. It is
-                        operated and owned by Goodyear Tire and Rubber Company in North America, Europe, New Zealand,
-                        and Australia. The company has extensive manufacturing operations worldwide.
 
-                    </p>
+                <h2 class="text-center"><?php echo $row1["manu_name"] ?> Tyres</h2>
 
-                    <p>What do their tyres have that makes them stand apart? It’s their reliable quality and dependable
-                        performance. They ensure a quiet and smooth drive and seem to hold the road well. Breaking down
-                        its performance, Dunlop tyres provide superb handling, fantastic dry grip (they do not suddenly
-                        lose grip even in wet weather conditions), and stiff sidewalls, because of which the driver will
-                        not feel any flex or roll-over in hard cornering. Their tyres can sustain significant long,
-                        spirited driving without being prone to wear and tear.</p>
+                <?php
 
-                    <p>Dunlop has been the favourite of motorsport events such as the Le Mans 24-Hour and the Isle of
-                        Man TT. They have been the leading tyre developers on four-wheels and two-wheels, on-track and
-                        off-road. All the experience gathered from such events is converted into better technology by
-                        the tyre manufacturers. These new technologies are tested and then adapted for road use.</p>
+                if ($row1["description"]) {
 
-                    <p>Additionally, Dunlop is a proud technical partner to Mercedes AMG Customer Sports and many of the
-                        world’s leading vehicle manufacturers, which include Audi, Porsche, BMW, Lexus, Honda, and
-                        Mercedes-Benz. It is no surprise that Dunlop has become one of the most iconic and recognisable
-                        tyre brands in the world today. It has an entire 120-year history of pioneering groundbreaking
-                        innovations in car performance and safety.</p>
+                    ?>
+                    <div class="tyres-text">
+                        <p>We can all agree that a set of good tyres is a must-have to keep the vehicle up and running for a
+                            long time. If you have been driving with worn-out tyres for years or are looking for some
+                            quality tyres, wait no more. A set of good tyres can have a huge impact on your overall driving
+                            experience. To ease this task for you, <strong>XPRESS TYRES LTD</strong>. recommends premier
+                            <strong>Dunlop tyres Manchester</strong>. Their latest range is available online at our garage.
+                        </p>
 
-                    <p>Affordable <strong>Dunlop Tyres Manchester</strong> can be ordered online for delivery to car
-                        owners around the globe. These tyres are available for vans, cars, SUVs and 4x4s. The turn-in is
-                        that these tyres are razor-sharp and suitable even for sporty driving. XPRESS TYRES LTD. offers
-                        a complete range of dunlop tyres Manchester from this renowned brand at affordable price levels.
-                        Take time to meet our technicians to get the best tyres for your vehicle and enjoy a host of
-                        after-care services, all within your budget.</p>
+                        <p>Pneumatic tyre pioneer John Boyd Dunlop founded Dunlop in Birmingham, England, in 1889. It is
+                            operated and owned by Goodyear Tire and Rubber Company in North America, Europe, New Zealand,
+                            and Australia. The company has extensive manufacturing operations worldwide.
 
-                </div>
+                        </p>
+
+                        <p>What do their tyres have that makes them stand apart? It’s their reliable quality and dependable
+                            performance. They ensure a quiet and smooth drive and seem to hold the road well. Breaking down
+                            its performance, Dunlop tyres provide superb handling, fantastic dry grip (they do not suddenly
+                            lose grip even in wet weather conditions), and stiff sidewalls, because of which the driver will
+                            not feel any flex or roll-over in hard cornering. Their tyres can sustain significant long,
+                            spirited driving without being prone to wear and tear.</p>
+
+                        <p>Dunlop has been the favourite of motorsport events such as the Le Mans 24-Hour and the Isle of
+                            Man TT. They have been the leading tyre developers on four-wheels and two-wheels, on-track and
+                            off-road. All the experience gathered from such events is converted into better technology by
+                            the tyre manufacturers. These new technologies are tested and then adapted for road use.</p>
+
+                        <p>Additionally, Dunlop is a proud technical partner to Mercedes AMG Customer Sports and many of the
+                            world’s leading vehicle manufacturers, which include Audi, Porsche, BMW, Lexus, Honda, and
+                            Mercedes-Benz. It is no surprise that Dunlop has become one of the most iconic and recognisable
+                            tyre brands in the world today. It has an entire 120-year history of pioneering groundbreaking
+                            innovations in car performance and safety.</p>
+
+                        <p>Affordable <strong>Dunlop Tyres Manchester</strong> can be ordered online for delivery to car
+                            owners around the globe. These tyres are available for vans, cars, SUVs and 4x4s. The turn-in is
+                            that these tyres are razor-sharp and suitable even for sporty driving. XPRESS TYRES LTD. offers
+                            a complete range of dunlop tyres Manchester from this renowned brand at affordable price levels.
+                            Take time to meet our technicians to get the best tyres for your vehicle and enjoy a host of
+                            after-care services, all within your budget.</p>
+
+                    </div>
+
+                    <?php
+                }
+                ?>
 
 
                 <!-- TYRES START-->
-                <section class="tyres">
-                    <h3 class="text-center mb-4">All tyres by <strong>Dunlop Tyres</strong></h3>
+                <section class="tyres mt-0">
+                    <h3 class="text-center mb-4">All tyres by <strong><?php echo $row1["manu_name"] ?> Tyres</strong>
+                    </h3>
                     <div class="row">
                         <div class="col-lg-3 col-md-4 mb-5">
                             <div class="tyres-manu">
                                 <ul>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Accelera</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i> </a>
-                                    </li>
 
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Anchee</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
+                                    <?php
+                                    $sql = "SELECT * FROM  `manufacturers`";
+                                    $res = mysqli_query($conn, $sql);
 
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Antares</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
 
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Aoteli</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
+                                            $mamu_active = ($_GET['id'] == $row["id"]) ? "active" : "";
 
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Apollo</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>ATLAS</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Avon</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>BANOZE</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>BLACKARROW</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Blacklion</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Bridgestone</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>CHURCHILL</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>COMFORSER</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Compass</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Continental</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Davanti</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>DELMAX</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php" class="active"><strong>Dunlop</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>DURATURN</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="manufacturers.php"><strong>Dynamo</strong> Tyres <i
-                                                class="fa-solid fa-angle-right"></i></a>
-                                    </li>
+
+                                            ?>
+
+
+                                            <li>
+                                                <a class="<?php echo $mamu_active; ?>"
+                                                    href="manufacturers.php?id=<?php echo $row["id"]; ?>"><strong><?php echo $row["manu_name"] ?></strong>
+                                                    Tyres <i class="fa-solid fa-angle-right"></i> </a>
+                                            </li>
+
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
@@ -326,189 +290,52 @@
 
                             <div class="row">
 
-                                <!-- tyre card -->
-                                <div class="col-sm-6 mb-3">
-                                    <div class="tyre-card">
-                                        <div class="row">
+                                <?php
+                                $sql3 = "SELECT * FROM tyres JOIN tyre_patteren ON tyres.p_id = tyre_patteren.pid WHERE tyres.manu_id = '$id'";
 
-                                            <div class="col-lg-4">
-                                                <div class="trye-img">
-                                                    <img src="assets/imgs/tyres/econodrive.jpg" width="100%" alt="">
-                                                </div>
-                                            </div>
+                                $res3 = mysqli_query($conn, $sql3);
+                                if (mysqli_num_rows($res3)) {
+                                    while ($row = mysqli_fetch_assoc($res3)) {
 
-                                            <div class="col-lg-8">
-                                                <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.php">Dunlop ECONO DRIVE</a>
-                                                    <p>Price from <strong>£127.05</strong></p>
-                                                    <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.php">Find OUT MORE <i
-                                                                class="fa-solid fa-angle-right"></i></a>
+                                        ?>
+
+                                        <!-- tyre card -->
+                                        <div class="col-sm-6 mb-3">
+                                            <div class="tyre-card">
+                                                <div class="row">
+
+                                                    <div class="col-lg-4">
+                                                        <div class="trye-img">
+                                                            <img src="assets/imgs/tyres/econodrive.jpg" width="100%" alt="">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- tyre card -->
-                                <div class="col-sm-6 mb-3">
-                                    <div class="tyre-card">
-                                        <div class="row">
-
-                                            <div class="col-lg-4">
-                                                <div class="trye-img">
-                                                    <img src="assets/imgs/tyres/econodrive.jpg" width="100%" alt="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-8">
-                                                <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.php">Dunlop FASTRESPONSE</a>
-                                                    <p>Price from <strong>72.05</strong></p>
-                                                    <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.php">Find OUT MORE <i
-                                                                class="fa-solid fa-angle-right"></i></a>
+                                                    <div class="col-lg-8">
+                                                        <div class="tyre-card-text">
+                                                            <a href="tyre-pattren.php"><?php echo $row1["manu_name"] . " " . $row["tyre_name"]  ?></a>
+                                                            <p>Price from <strong>£127.05</strong></p>
+                                                            <div class="tyre-card-btn">
+                                                                <a href="tyre-pattren.php?mid=<?php echo $row["manu_id"] ?>&pid=<?php echo $row["pid"] ?>">Find OUT MORE <i
+                                                                        class="fa-solid fa-angle-right"></i></a>
+                                                            </div>
+                                                        </div>
                                                     </div>
+
                                                 </div>
                                             </div>
-
                                         </div>
+
+                                        <?php
+                                    }
+                                } else {
+                                    ?>
+                                    <div class="col-md-6  mt-5 ">
+                                        <h6 class="text-center">No record Found.</h6>
                                     </div>
-                                </div>
+                                <?php } ?>
 
-                                <!-- tyre card -->
-                                <div class="col-sm-6 mb-3">
-                                    <div class="tyre-card">
-                                        <div class="row">
 
-                                            <div class="col-lg-4">
-                                                <div class="trye-img">
-                                                    <img src="assets/imgs/tyres/econodrive.jpg" width="100%" alt="">
-                                                </div>
-                                            </div>
 
-                                            <div class="col-lg-8">
-                                                <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.php">Dunlop GRANDTREK AT20</a>
-                                                    <p>Price from <strong>£122.05</strong></p>
-                                                    <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.php">Find OUT MORE <i
-                                                                class="fa-solid fa-angle-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- tyre card -->
-                                <div class="col-sm-6 mb-3">
-                                    <div class="tyre-card">
-                                        <div class="row">
-
-                                            <div class="col-lg-4">
-                                                <div class="trye-img">
-                                                    <img src="assets/imgs/tyres/econodrive.jpg" width="100%" alt="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-8">
-                                                <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.php">Dunlop GRANDTREK AT5</a>
-                                                    <p>Price from <strong>£127.05</strong></p>
-                                                    <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.php">Find OUT MORE <i
-                                                                class="fa-solid fa-angle-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- tyre card -->
-                                <div class="col-sm-6 mb-3">
-                                    <div class="tyre-card">
-                                        <div class="row">
-
-                                            <div class="col-lg-4">
-                                                <div class="trye-img">
-                                                    <img src="assets/imgs/tyres/econodrive.jpg" width="100%" alt="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-8">
-                                                <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.php">Dunlop GRANDTREK ST20</a>
-                                                    <p>Price from <strong>111.05</strong></p>
-                                                    <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.php">Find OUT MORE <i
-                                                                class="fa-solid fa-angle-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- tyre card -->
-                                <div class="col-sm-6 mb-3">
-                                    <div class="tyre-card">
-                                        <div class="row">
-
-                                            <div class="col-lg-4">
-                                                <div class="trye-img">
-                                                    <img src="assets/imgs/tyres/econodrive.jpg" width="100%" alt="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-8">
-                                                <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.php">Dunlop GRANDTREK ST30</a>
-                                                    <p>Price from <strong>£117.05</strong></p>
-                                                    <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.php">Find OUT MORE <i
-                                                                class="fa-solid fa-angle-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- tyre card -->
-                                <div class="col-sm-6 mb-3">
-                                    <div class="tyre-card">
-                                        <div class="row">
-
-                                            <div class="col-lg-4">
-                                                <div class="trye-img">
-                                                    <img src="assets/imgs/tyres/econodrive.jpg" width="100%" alt="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-8">
-                                                <div class="tyre-card-text">
-                                                    <a href="tyre-pattren.php">Dunlop SP ER RESPONSE 2</a>
-                                                    <p>Price from <strong>71.05</strong></p>
-                                                    <div class="tyre-card-btn">
-                                                        <a href="tyre-pattren.php">Find OUT MORE <i
-                                                                class="fa-solid fa-angle-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                               
 
                             </div>
 
@@ -523,7 +350,7 @@
 
 
         <?php
-            include_once "includes/footer.php";
+        include_once "includes/footer.php";
         ?>
 
 
