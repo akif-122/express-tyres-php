@@ -206,43 +206,9 @@ include_once "php/config.php";
 
                     ?>
                     <div class="tyres-text">
-                        <p>We can all agree that a set of good tyres is a must-have to keep the vehicle up and running for a
-                            long time. If you have been driving with worn-out tyres for years or are looking for some
-                            quality tyres, wait no more. A set of good tyres can have a huge impact on your overall driving
-                            experience. To ease this task for you, <strong>XPRESS TYRES LTD</strong>. recommends premier
-                            <strong>Dunlop tyres Manchester</strong>. Their latest range is available online at our garage.
-                        </p>
-
-                        <p>Pneumatic tyre pioneer John Boyd Dunlop founded Dunlop in Birmingham, England, in 1889. It is
-                            operated and owned by Goodyear Tire and Rubber Company in North America, Europe, New Zealand,
-                            and Australia. The company has extensive manufacturing operations worldwide.
-
-                        </p>
-
-                        <p>What do their tyres have that makes them stand apart? It’s their reliable quality and dependable
-                            performance. They ensure a quiet and smooth drive and seem to hold the road well. Breaking down
-                            its performance, Dunlop tyres provide superb handling, fantastic dry grip (they do not suddenly
-                            lose grip even in wet weather conditions), and stiff sidewalls, because of which the driver will
-                            not feel any flex or roll-over in hard cornering. Their tyres can sustain significant long,
-                            spirited driving without being prone to wear and tear.</p>
-
-                        <p>Dunlop has been the favourite of motorsport events such as the Le Mans 24-Hour and the Isle of
-                            Man TT. They have been the leading tyre developers on four-wheels and two-wheels, on-track and
-                            off-road. All the experience gathered from such events is converted into better technology by
-                            the tyre manufacturers. These new technologies are tested and then adapted for road use.</p>
-
-                        <p>Additionally, Dunlop is a proud technical partner to Mercedes AMG Customer Sports and many of the
-                            world’s leading vehicle manufacturers, which include Audi, Porsche, BMW, Lexus, Honda, and
-                            Mercedes-Benz. It is no surprise that Dunlop has become one of the most iconic and recognisable
-                            tyre brands in the world today. It has an entire 120-year history of pioneering groundbreaking
-                            innovations in car performance and safety.</p>
-
-                        <p>Affordable <strong>Dunlop Tyres Manchester</strong> can be ordered online for delivery to car
-                            owners around the globe. These tyres are available for vans, cars, SUVs and 4x4s. The turn-in is
-                            that these tyres are razor-sharp and suitable even for sporty driving. XPRESS TYRES LTD. offers
-                            a complete range of dunlop tyres Manchester from this renowned brand at affordable price levels.
-                            Take time to meet our technicians to get the best tyres for your vehicle and enjoy a host of
-                            after-care services, all within your budget.</p>
+                        <?php
+                        echo $row1["description"];
+                        ?>
 
                     </div>
 
@@ -262,6 +228,9 @@ include_once "php/config.php";
 
                                     <?php
                                     $sql = "SELECT * FROM  `manufacturers`";
+
+
+                                    // $sql3 = "SELECT * FROM tyres JOIN tyre_patteren ON tyres.p_id = tyre_patteren.pid JOIN `manufacturers` ON tyres.manu_id = manufacturers.id";
                                     $res = mysqli_query($conn, $sql);
 
                                     if (mysqli_num_rows($res) > 0) {
@@ -312,11 +281,13 @@ include_once "php/config.php";
 
                                                     <div class="col-lg-8">
                                                         <div class="tyre-card-text">
-                                                            <a href="tyre-pattren.php"><?php echo $row1["manu_name"] . " " . $row["tyre_name"]  ?></a>
+                                                            <a
+                                                                href="tyre-pattren.php"><?php echo $row1["manu_name"] . " " . $row["tyre_name"] ?></a>
                                                             <p>Price from <strong>£127.05</strong></p>
                                                             <div class="tyre-card-btn">
-                                                                <a href="tyre-pattren.php?mid=<?php echo $row["manu_id"] ?>&pid=<?php echo $row["pid"] ?>">Find OUT MORE <i
-                                                                        class="fa-solid fa-angle-right"></i></a>
+                                                                <a
+                                                                    href="tyre-pattren.php?mid=<?php echo $row["manu_id"] ?>&pid=<?php echo $row["pid"] ?>">Find
+                                                                    OUT MORE <i class="fa-solid fa-angle-right"></i></a>
                                                             </div>
                                                         </div>
                                                     </div>

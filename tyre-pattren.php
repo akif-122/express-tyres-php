@@ -96,6 +96,7 @@ include "php/config.php";
 
                                 if (mysqli_num_rows($res4) > 0) {
                                     while ($row4 = mysqli_fetch_assoc($res4)) {
+
                                         ?>
 
                                         <!-- CARD -->
@@ -152,7 +153,7 @@ include "php/config.php";
                                                         <div class="icon">
                                                             <img src="assets/imgs/car.png" alt="">
                                                         </div>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <div class="icon">
 
                                                         <img src="assets/imgs/summer-icon.png" alt="">
@@ -172,10 +173,14 @@ include "php/config.php";
 
                                                         <div class="form-group mb-2">
                                                             <select name="quantity" class="form-select">
-                                                                <option value="1">1 Tyre £<?php echo $row4["tyre_price"] ?></option>
-                                                                <option value="2">2 Tyre £<?php echo $row4["tyre_price"] * 2 ?></option>
-                                                                <option value="3">3 Tyre £<?php echo $row4["tyre_price"] * 3 ?></option>
-                                                                <option value="4">4 Tyre £<?php echo $row4["tyre_price"] * 4 ?></option>
+                                                                <option value="1">1 Tyre £<?php echo $row4["tyre_price"] ?>
+                                                                </option>
+                                                                <option value="2">2 Tyre £<?php echo $row4["tyre_price"] * 2 ?>
+                                                                </option>
+                                                                <option value="3">3 Tyre £<?php echo $row4["tyre_price"] * 3 ?>
+                                                                </option>
+                                                                <option value="4">4 Tyre £<?php echo $row4["tyre_price"] * 4 ?>
+                                                                </option>
                                                             </select>
                                                         </div>
 
@@ -194,7 +199,7 @@ include "php/config.php";
 
                                         <?php
                                     }
-                                } }else {
+                                } else {
                                     ?>
                                     <h5>No record Found</h5>
                                     <?php

@@ -1264,6 +1264,8 @@ HERO BANNER SECTION START
 }
 .tyre-pattern .pattern-card {
   margin-bottom: 15px 0;
+  max-width: 300px;
+  margin: 0 auto;
 }
 .tyre-pattern .pattern-card .patt-card-head {
   display: flex;
